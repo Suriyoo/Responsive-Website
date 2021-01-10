@@ -1,0 +1,267 @@
+/************************* import special font size **************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&display=swap');
+
+/************************* whole page **************************************************/
+*{
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+body{
+	background-color: #a1a1a1;
+	margin: 0 20% 0 20%;
+}
+
+/************************* header **************************************************/
+header {
+	width: 100%;
+	height: calc(100px + 15vw);
+	/*The background image of the page header is fully visible (no matter the width of the viewport) and appear centered within the header*/
+	background: black url("http://homepages.cs.ncl.ac.uk/harold.fellermann/csc8018/chessboxing/chessboxing_background.jpg") center no-repeat;
+	background-size: contain;
+	position: relative;
+	font-family: 'Kanit', sans-serif;
+	z-index: 2;
+}
+
+/******* heading ************/
+h1{
+	color: #FFFFFF;
+	font-size: calc(25px + 4vw);
+	padding-left: 8%; /*The left edge of the main heading is aligned with the left edge of the main text*/
+	padding-top: 4%;
+}
+
+/**** navigation bar ********/
+.nav{
+	float: right;
+	position: absolute;
+	right: 0;
+	bottom: 2px;
+	padding-left: 8%;
+	padding-right: 8%; /*navbar is aligned right with the right edge of the main text*/
+	z-index: 3;
+}
+
+.nav li{
+	list-style-type: none;
+	float: left; /*The navigation is rendered horizontal in viewports larger than 600 pixels*/
+	padding: 0 1rem;
+}
+.nav a{
+	display: block;
+	color: white;
+	font-size: 1.4rem;
+	text-align: center;
+	text-decoration: none;
+}
+
+/*highlight while mouse over*/
+.nav a:hover{
+	color: #ffff00;
+	background-color: rgba(255, 255, 255,0.3);
+}
+
+/************* page body, header, headline, navigation bar setting for smaller browser window ************/
+@media screen and (max-width:600px){
+	body{
+		margin: 0;
+	}
+	header{
+		height: calc(100px + 25vw);
+	}
+h1{
+	padding-top: 3%;
+	padding-left: 2%;
+	font-size: calc(6px + 10vw); /*The size of the heading will reduce on small displays*/
+}
+.nav{
+	width: 100%;
+	padding-right: 0;
+}
+.nav li{
+	float: none; /*the menu is rendered vertically on small displays*/
+	display: inline;
+	padding: 0;
+}
+.nav a {
+	text-align: right;
+	padding-right: 2%; /*navbar is aligned right with the right edge of the main text*/
+	font-size: calc(8px + 2vw);
+}
+}
+
+/************************* main content **************************************************/
+main {
+	padding: 3% 8% 8% 8%;
+	font-family: 'Crimson Text', serif;
+	font-size: 14pt;
+	background-color: #FFFFFF;
+	z-index: 999;
+}
+p{
+	max-width: 90ch;
+	margin-top: 1%;
+	margin-bottom: 2%;
+	overflow-x: visible;
+}
+h2{
+	color: #0d5097;
+	font-family: 'Kanit', sans-serif;
+	font-size: calc(16px + 1vw);
+}
+/********** icons *****************/
+h2:before{
+	font-size: calc(30px + 4vw);
+}
+
+#History h2:before{
+	content: '\2655';
+}
+#Rule h2:before{
+	content: '\265a';
+}
+#Training h2:before{
+	content: '\2656';
+	word-break: break-all; /*not break one long word*/
+}
+#Machine h2:before {
+	content: '\265d';
+}
+/********* figures  ****************/
+#FigA,#FigB,#FigC{
+	border: 3px solid #D0D0D0;
+	border-radius: 20px;
+	text-align: center;
+}
+#FigA,#FigB{
+	margin: 1%;
+	padding: 2%;
+	float: right;
+	width: 26vw;
+}
+figcaption{
+	font-style: italic;
+	padding: 10px;
+}
+#FigA img{
+	width: 100%;
+}
+#FigB iframe{
+	max-width: 400px;
+	max-height: 225px;
+	border: none;
+	width: 25vw;
+	height: calc(25vw * 225/400);;
+}
+#FigC{
+	padding: 10px;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	clear: both;
+}
+#FigC > table {
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+	border-collapse: collapse;
+	text-align: left;
+}
+#FigC tr,td{
+	border-bottom: 1px solid #D3D3D3;
+	height: 40px;
+}
+
+#FigC td:before{
+	content: "\00a0 \00a0 \00a0 \00a0 \00a0";
+}
+#FigC th{
+	border-top: 2px solid #D3D3D3;
+	border-bottom: 2px solid #D3D3D3;
+	height: 40px;
+}
+#FigC th:before{
+	content: "\00a0 \00a0 \00a0 \00a0 \00a0";
+}
+#FigC img{
+	float: right;
+	margin: 100px 0;
+}
+/************* main content, headlines, paragraphs,figures setting for smaller browser window size ************/
+@media only screen and (max-width: 600px) {
+	main{
+		padding: 2%;
+		font-size: calc(14px + 1vw);
+	}
+	h2{
+		word-wrap: break-word;
+	}
+	p{
+		clear: both;
+	}
+	#FigA,#FigB,#FigC {
+		padding: 3%;
+		float: none;
+		clear: both;
+		width: 90%;
+		height: auto;
+		margin-top: 2%;
+		margin-bottom: 2%;
+	}
+	#FigB iframe{
+		width: 80vw;
+		height: calc(80vw * 225/400);
+	}
+	#FigC table{
+		margin: auto;
+		float: none;
+	}
+	#FigC img{
+		margin: 20px 0 0 0;
+		width: 70%;
+		min-width: -moz-available;
+		float: none;
+	}
+}
+
+/******* special list format ******/
+main ul{
+	margin-left: 0;
+	padding-left: 40px;
+}
+main li  {
+	overflow: visible;
+	list-style-type: disc;
+}
+
+blockquote{
+	padding: 1% 5% 0 5%;
+}
+
+#t{
+	font-style: italic;
+}
+blockquote i{
+	font-style: normal;
+}
+
+/************************* footer **************************************************/
+footer{
+	clear: both;
+	width: 100%;
+	background-color: #000000;
+	font-family: 'Crimson Text', serif;
+}
+.text{
+	color:white;
+	font-size: 16px;
+	text-align: center;
+	padding: 2rem;
+}
+.text a:link{
+	color: #FFFFFF;
+}
+.text a:visited{
+	text-decoration: none;
+}
