@@ -72,4 +72,4 @@ Your stylesheet is clearly structured.
 Your CSS solution is based on robust and logical CSS selectors.
 Your CSS solution features a good amount of explanatory comments.
  
-Dr HMA Fellermann
+Dr H.F.
